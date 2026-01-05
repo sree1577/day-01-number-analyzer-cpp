@@ -49,7 +49,7 @@ int main() {
 
     double average = sum / numbers.size();
 
-    cout << "\n📊 Number Analysis Results\n";
+    cout << "\n Number Analysis Results\n";
     cout << "---------------------------\n";
     cout << "Count   : " << numbers.size() << endl;
     cout << "Minimum : " << minVal << endl;

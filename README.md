@@ -44,4 +44,44 @@ Build a command-line application that accepts a list of numbers from the user an
 ## 📥 Input Format
 Enter numbers separated by spaces.
 
-### Example:
+### Example Input:
+10 20 abc 30 -5 xyz
+
+
+---
+
+## 📤 Sample Output
+⚠️ Invalid input ignored: 'abc'
+⚠️ Invalid input ignored: 'xyz'
+
+📊 Number Analysis Results
+
+Count : 4
+Minimum : -5
+Maximum : 30
+Sum : 55
+Average : 13.75
+
+
+---
+
+## 🧠 Program Logic
+1. Read the complete input line using `getline()`
+2. Split the input string into tokens using `stringstream`
+3. Convert each token into a number using `stod()`
+4. Handle invalid inputs using exception handling
+5. Store valid numbers in a `vector`
+6. Compute minimum, maximum, sum, and average
+7. Display results in a structured format
+
+---
+
+## ▶️ How to Run the Program
+
+### Compile
+```bash
+g++ number_analyzer.cpp -o number_analyzer
+
+### Run
+./number_analyzer
+
