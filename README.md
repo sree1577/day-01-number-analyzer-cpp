@@ -1,10 +1,13 @@
 # Day 1 – Number Analyzer (C++)
 
 ## 📌 Overview
-Number Analyzer is a command-line application written in **C++** that takes a list of numbers from the user and computes essential statistical values such as **minimum**, **maximum**, **sum**, and **average**.  
-The application is designed to handle **invalid inputs gracefully**, ensuring the program does not crash due to incorrect user input.
+**Number Analyzer** is a command-line application written in **C++** that accepts a list of numbers from the user and computes detailed statistical information.
 
-This project is part of a **30 Days – 30 Projects** challenge aimed at building strong programming fundamentals and preparing for open-source contributions and technical interviews.
+The program is designed to **handle invalid inputs gracefully**, ensuring that incorrect or non-numeric values do not cause the application to crash. Any invalid input is safely ignored with a clear message to the user.
+
+This implementation supports **both space-separated and comma-separated input**, computes **advanced statistical metrics**, and displays results in a clean, readable format.
+
+This project is part of a **30 Days – 30 Projects** challenge focused on strengthening programming fundamentals and building industry-ready coding practices.
 
 ---
 
@@ -15,12 +18,19 @@ Build a command-line application that accepts a list of numbers from the user an
 
 ## 🚀 Features
 - Accepts multiple numbers in a single line
-- Ignores invalid or non-numeric inputs safely
+- Supports **space-separated and comma-separated input**
+- Safely ignores invalid or non-numeric values
 - Calculates:
+  - Count of valid numbers
   - Minimum value
   - Maximum value
   - Sum of numbers
-  - Average of numbers
+  - Average (mean)
+  - Median
+  - Mode (supports duplicate values)
+  - Range
+  - Standard deviation
+- Displays the **sorted list of valid numbers**
 - Clean and readable console output
 
 ---
@@ -32,19 +42,23 @@ Build a command-line application that accepts a list of numbers from the user an
   - `<sstream>`
   - `<vector>`
   - `<string>`
+  - `<algorithm>`
+  - `<cmath>`
+  - `<map>`
 - **Core Concepts:**
-  - Standard Input/Output
-  - STL (`vector`)
+  - Standard input/output
+  - STL containers (`vector`, `map`)
   - String parsing using `stringstream`
   - Exception handling (`try-catch`)
   - String-to-number conversion using `stod()`
+  - Basic statistical calculations
 
 ---
 
 ## 📥 Input Format
-Enter numbers separated by spaces.
+Enter numbers separated by **spaces or commas**.
 
-### Example Input:
+### Example Input
 10 20 abc 30 -5 xyz
 
 
@@ -61,18 +75,23 @@ Minimum : -5
 Maximum : 30
 Sum : 55
 Average : 13.75
-
+Median  : 15
+Range   : 35
+Std Dev : 14.9304
+Mode    : No mode
+Sorted  : -5 10 20 30
 
 ---
 
 ## 🧠 Program Logic
 1. Read the complete input line using `getline()`
-2. Split the input string into tokens using `stringstream`
-3. Convert each token into a number using `stod()`
-4. Handle invalid inputs using exception handling
-5. Store valid numbers in a `vector`
-6. Compute minimum, maximum, sum, and average
-7. Display results in a structured format
+2. Replace commas with spaces to normalize input
+3. Split the input string using `stringstream`
+4. Convert each token to a numeric value using `stod()`
+5. Ignore invalid tokens using exception handling
+6. Store valid numbers in a `vector`
+7. Calculate statistical values (min, max, sum, average, median, mode, range, standard deviation)
+8. Sort and display the final results in a structured format
 
 ---
 
